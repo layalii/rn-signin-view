@@ -1,15 +1,9 @@
 import React, { Component } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  ScrollView,
-  TouchableOpacity
-} from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { Text, StyleSheet, Image, ScrollView } from "react-native";
+import LoginButton from "./LoginButton";
 
 export default class Home extends Component {
+  static defaultProps = {};
   render() {
     return (
       <React.Fragment>
@@ -17,13 +11,10 @@ export default class Home extends Component {
           style={styles.scrollviewParent}
           contentContainerStyle={styles.scrollview}
         >
-          <Ionicons name="md-checkmark-circle" size={32} color="green" />
           <Text style={styles.text1}>Create an account</Text>
           <Text style={styles.text2}>Mansions you only dreamed of</Text>
           <Image source={require("img/img.png")} style={styles.image} />
-          <TouchableOpacity style={[styles.touchable, styles.alignSCenter]}>
-            <Text style={{ color: "white" }}>SIGNUP</Text>
-          </TouchableOpacity>
+          <LoginButton title="SIGNUP" />
           <Text style={[styles.alignSCenter, { opacity: 0.6, paddingTop: 10 }]}>
             Terms of service
           </Text>
@@ -62,12 +53,5 @@ const styles = StyleSheet.create({
   scrollview: {},
   scrollviewParent: {
     flexGrow: 1
-  },
-  touchable: {
-    padding: 10,
-    width: "80%",
-    backgroundColor: "blue",
-    alignItems: "center",
-    borderRadius: 3
   }
 });
