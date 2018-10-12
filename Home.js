@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Text, StyleSheet, Image, ScrollView } from "react-native";
 import LoginButton from "./LoginButton";
+import { createStackNavigator } from "react-navigation";
 
 export default class Home extends Component {
   static defaultProps = {};
@@ -14,7 +15,10 @@ export default class Home extends Component {
           <Text style={styles.text1}>Create an account</Text>
           <Text style={styles.text2}>Mansions you only dreamed of</Text>
           <Image source={require("img/img.png")} style={styles.image} />
-          <LoginButton title="SIGNUP" />
+          <LoginButton
+            title="SIGNUP"
+            onPress={() => this.props.navigation.navigate("Login")}
+          />
           <Text style={[styles.alignSCenter, { opacity: 0.6, paddingTop: 10 }]}>
             Terms of service
           </Text>

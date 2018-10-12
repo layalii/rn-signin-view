@@ -1,8 +1,15 @@
 import React, { Component } from "react";
-import { Text, StyleSheet, TextInput, View } from "react-native";
+import {
+  Text,
+  StyleSheet,
+  TextInput,
+  View,
+  TouchableOpacity
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import CheckBox from "react-native-checkbox";
 import LoginButton from "./LoginButton";
+import { createStackNavigator } from "react-navigation";
 
 export default class Login extends Component {
   state = {
@@ -13,12 +20,16 @@ export default class Login extends Component {
     return (
       <React.Fragment>
         <View style={styles.container}>
-          <Ionicons
-            name="md-arrow-back"
-            size={32}
-            color="black"
-            style={{ marginTop: 60, marginBottom: 40 }}
-          />
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("Home")}
+          >
+            <Ionicons
+              name="md-arrow-back"
+              size={32}
+              color="black"
+              style={{ marginTop: 60, marginBottom: 40 }}
+            />
+          </TouchableOpacity>
           <Text style={styles.txt1}>Glad to see you </Text>
           <Text style={styles.grclr}>Username</Text>
           <TextInput
