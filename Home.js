@@ -3,7 +3,7 @@ import { Text, StyleSheet, Image, ScrollView } from "react-native";
 import LoginButton from "./LoginButton";
 import { createStackNavigator } from "react-navigation";
 
-export default class Home extends Component {
+export default class HomeScreen extends Component {
   static defaultProps = {};
   render() {
     return (
