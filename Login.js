@@ -9,9 +9,8 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import CheckBox from "react-native-checkbox";
 import LoginButton from "./LoginButton";
-import { createStackNavigator } from "react-navigation";
 
-export default class Login extends Component {
+export default class LoginScreen extends Component {
   state = {
     isChecked: false
   };
